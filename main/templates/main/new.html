@@ -1,0 +1,67 @@
+<div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
+  {%if popular%}
+  {% for p in popular %}
+
+  <a href="">
+    <div class=" bg-image rounded-6 masking bg3 m-md-4" style="cursor: pointer;">
+      {%if p.poster_path%}
+      <img src="https://image.tmdb.org/t/p/w500/{{ p.poster_path }}" class="w-100 h-100"  alt="Alternative text"
+        style="border-radius: 10px; width:auto;" />
+        {%endif%}
+      <!-- Mask -->
+      <div class="mask "
+      style="
+    background: linear-gradient(
+      to bottom,
+      hsla(0, 0%, 0%, 0),
+      hsla(307, 82%, 24%, 0.55)
+    );
+  ">
+              <div class="
+        bottom-0
+        d-flex
+        align-items-end
+        h-100
+        text-center
+        justify-content-center
+      ">
+                <div class="col">
+
+                  {{p.title}}
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </a>
+
+        {%endfor%}
+        {%endif%}
+        
+      </div>
+
+<!-- jjj -->
+{%if popular%}
+{%for p in popular%}
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col">
+    <div class="card" style="height: 10rem; width:15rem;">
+      {%if p.poster_path%}
+    <img src="https://image.tmdb.org/t/p/w500/{{ p.poster_path }}" class="img-responsive"
+
+    alt="">
+  {%endif%}
+      <div class="card-body">
+
+    <h5 class="card-title">{{p.title}}</h5>
+
+      </div>
+    </div>
+  </div>
+</div>
+{%endfor%}
+{%endif%}
+</div>
+
+

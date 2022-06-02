@@ -1,0 +1,95 @@
+{% extends 'main/base.html' %} {% block content %}
+<div class="container">
+  <h1>netflix</h1>
+<h2 align="center">Popular Movies</h2>
+  <div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
+    {%if popular%} {% for p in popular %}
+    <a href="">
+      <div
+        class="bg-image rounded-6 masking bg3 m-md-4"
+        style="cursor: pointer"
+      >
+        {%if p.poster_path%}
+        <img
+          src="https://image.tmdb.org/t/p/w500/{{ p.poster_path }}"
+          class="w-100 h-100"
+          alt="Alternative text"
+          style="border-radius: 10px; width: auto"
+        />
+        {%endif%}
+        <!-- Mask -->
+        <div class="mask">
+          <div
+            class="bottom-0 d-flex align-items-end h-100 text-center justify-content-center"
+          >
+            <div class="col">{{p.title}}</div>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    {%endfor%} {%endif%}
+  </div>
+<h2>Upcoming Movies</h2>
+  <div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
+    {%if upcoming%} {% for up in upcoming %}
+    <a href="">
+      <div
+        class="bg-image rounded-6 masking bg3 m-md-4"
+        style="cursor: pointer"
+      >
+        {%if up.poster_path%}
+        <img
+          src="https://image.tmdb.org/t/p/w500/{{ up.poster_path }}"
+          class="w-100 h-100"
+          alt="Alternative text"
+          style="border-radius: 10px; width: auto"
+        />
+        {%endif%}
+        <!-- Mask -->
+        <div class="mask">
+          <div
+            class="bottom-0 d-flex align-items-end h-100 text-center justify-content-center"
+          >
+            <div class="col">{{up.title}}</div>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    {%endfor%} {%endif%}
+  </div>
+
+  <h2>Now Playing</h2>
+  <div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
+    {%if upcoming%} {% for up in upcoming %}
+    <a href="">
+      <div
+        class="bg-image rounded-6 masking bg3 m-md-4"
+        style="cursor: pointer"
+      >
+        {%if up.poster_path%}
+        <img
+          src="https://image.tmdb.org/t/p/w500/{{ up.poster_path }}"
+          class="w-100 h-100"
+          alt="Alternative text"
+          style="border-radius: 10px; width: auto"
+        />
+        {%endif%}
+        <!-- Mask -->
+        <div class="mask">
+          <div
+            class="bottom-0 d-flex align-items-end h-100 text-center justify-content-center"
+          >
+            <div class="col">{{up.title}}</div>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    {%endfor%} {%endif%}
+  </div>
+
+
+  {%endblock%}
+</div>
